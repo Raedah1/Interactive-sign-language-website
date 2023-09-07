@@ -71,3 +71,10 @@ On other hand, if the calculation results of the slope is greater than 1 and the
 
 <img width="492" alt="Up_or_down" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/b961ec5c-465a-4e9d-9858-b7d7f5f02736">
 
+# 2.3 The finger is open or closed 
+This determination is based on the comparison between the landmark for the tip of the finger, referred to as “landmark[tip]” with the second and third position 
+of the tip in the same finger ”landmark[tip -1]” and “landmarks[tip - 2]”. In some cases, specifically for the thumb finger the comparison is between “landmark[tip]”with “[landmark[tip -3]”. For the signs that point “Up” the difference between the landmarks is observed along the Y-axis. In contrast, for signs pointing in the “Right” and “Left” direction, the difference occurs in the X-axis. The idea of this code was adapted from 
+the work of datamagic2020s GitHub . 
+As an example to detect “Number one” for left handed learner’s, first the orientation of the hand is “Up” and the index finger must be open while the rest of the fingers should be closed, please refer to Figure 21.0 for a visual illustration of the sign.To ensure that middle[12], ring[16], and pinky[20] are recognised as closed, the tip of these fingers in the Y-axis should be greater than the [tip - 3]see the snippet of the code in Figure 5.For the index finger if this condition “landmarks [index_tip].< landmarks[index_tip - 2]” is met , it indicates that the finger is extended(open).Then for the thumb finger this condition should be met “landmarks[thumb].x >landmarks[thumb-3].x”, to recognize it as closed.
+
+<img width="235" alt="Up" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/bc3dfe6f-3de8-4459-8ea0-9d1635598c7a">
