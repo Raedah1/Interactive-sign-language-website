@@ -99,3 +99,24 @@ the orientation of the hand is “Left” , which is the opposite for “Number 
 of the hand , as it will not make any difference. To get a better illustration refer to Figure 8.
 
 <img width="192" alt="wrong_six_gesture" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/8bc816f8-6c52-4c32-8411-39c4045fe57e">
+
+# 3.0 The Letters sign recognition function for Left-handed
+Therefore the two key features that will be focused on when implementing the functions are the distance between the fingers , and determining if the fingers are open or closed. First initialising the hand tracking module to detect both hands by setting the attribute to 2 “mp_hands.Hands(max_num_hands = 2)”. Then identify and store the detected landmarks of the right and left hand in separate variables. As they will be used in stating the conditions for recognising the signs. Furthermore, calculating the distance between the landmarks of the opposite hand.
+
+<img width="367" alt="Letters" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/e6dce9a8-af3a-4bdc-bd81-6334490963e3">
+
+# 3.1 The Distance between Fingers 
+The concept behind this function is to calculate the Euclidean distance between two landmarks and then use it as a condition to recognize specific hand signs . The formula is as follows “sqrt((x2 - x1) ^2+ (y2 - y1) ^2)”. The function takes two landmarks points 
+as input and returns the distance between them. Snippet of the code is in Figure 10.
+
+<img width="227" alt="Block_of_code" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/1cc33a68-ad12-4663-9b97-4d47ff97d22b">
+
+To give an example of how the distance feature is used to recognise a sign ,consider the “Letter A” sign for left-handed learner.In this sign, the tip of the index finger of the left hand is placed on the tip of the thumb finger of the right hand. This indicates that the distance between them should be relatively small, close to “0.01”, compared with other fingers. To get an accurate distance measurement , refer to the “findDistance'' file, which presents two functions , the “find_distance” ,and “show_distance”, to calculate the distance and display it in the frame respectively (reference, the two files). 
+For illustration refer to Figure 11.
+
+<img width="169" alt="Distance" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/c6f1aa34-e034-4f62-a38e-2425a1622216">
+
+In the implementation of the “reconise_letter_A '' function , the calculated distance is used as a condition to reconsine the sign.However,it is recommended to set the distance slightly larger as “if distance <= 0.03”, to allow for some flexibility. Since the signs can still be recognised as “Letter A” as long as the index finger of the left hand is attached to the thumb finger of the right hand. There are others features that need to be stated such as the rest of the right hand fingers must be closed. while all the fingers of the left hand must be closed. If all the conditions are met it recognises the 
+hand sign as “Letter A”,please refer to Figure 12.
+
+<img width="168" alt="Letter_A" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/bf65d3bf-2e52-41e8-a957-ddb491b59624">
