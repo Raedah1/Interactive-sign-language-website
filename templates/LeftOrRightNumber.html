@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Lessons  Page
+{% endblock %}
+
+{% block content %}
+<section class="preference-digit" id="preference-digit">
+  <div class="row">
+    <div class="content">
+      <h3>Choose your dominant hand and BSL preference</h3>
+      <form>
+        <p>Hand preference is important when learning BSL because some signs are performed with one hand while others require the use of both hands. Knowing your hand preference can help you learn the signs more effectively during the lessons by allowing you to focus on the hand movements that are most comfortable and natural for you.</p>
+        <label>Choose your hand preference:</label>
+        <br>
+        <input type="radio" id="right-handed" name="hand-preference" value="right" checked>
+        <label for="right-handed">Right-handed</label>
+        <br>
+        <input type="radio" id="left-handed" name="hand-preference" value="left">
+        <label for="left-handed">Left-handed</label>
+        <br>
+        <br>
+        <label>Choose which BSL you want to learn:</label>
+        <br>
+        <input type="radio" id="wales" name="country-preference" value="wales">
+        <label for="wales">Wales</label>
+        <br>
+        <input type="radio" id="england" name="country-preference" value="england">
+        <label for="england">England</label>
+        <br>
+        <br>
+        <button class="btn-stop" type="button" onclick="redirectDigit()">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

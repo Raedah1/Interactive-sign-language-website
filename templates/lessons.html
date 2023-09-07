@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Lessons  Page
+{% endblock %}
+
+{% block content %}
+<section class="full-container" id="full-container">
+    <div class="row">
+        <div class="content">
+            <h3>The <span>Lessons</span></h3>
+            <p>Welcome to our sign language lessons page. Here you will find three different lessons that will help you learn British sign language. Whether you are a complete beginner or have some experience with sign language . These course are designed to help you improve your skills and gain confidience.
+          </p>
+        </div>
+    </div>
+</section>
+
+<section class="courses">
+  <div class="container_courses">
+    <article class="course">
+      <div class="course_image">
+        <img src="../static/images/numbers2.png">
+      </div>
+      <div class="course_info">
+        <h4>Learn Digits in BSL</h4>
+        <p>In this course, you learn how to sign number in BSL. you will start with the basics from 1 to 9.
+        </p>
+        <div class="button-container">
+             <a href="{{ url_for('LeftOrRightNumber') }}" class="btn-stop">Learn More</a>
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course_image">
+        <img src="../static/images/letters.png">
+      </div>
+      <div class="course_info">
+        <h4>Learn Fingerspelling in BSL</h4>
+        <p>In this lesson will teach you how to sing the letter of the Alphabet in BSL. You will learn how to fingerspell.
+        </p>
+        <div class="button-container">
+             <a href="{{ url_for('LeftOrRightLetter') }}" class="btn-stop">Learn More</a>
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course_image">
+        <img src="../static/images/Basic-words.png">
+      </div>
+      <div class="course_info">
+        <h4>Learn Basic words in BSL</h4>
+        <p>This lesson is designed to teach you the basic sign language vocabulary. That you can use in everyday situation.
+        </p>
+        <div class="button-container">
+             <a href="{{ url_for('random') }}" class="btn-stop">Learn More</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+{% endblock %}
+
+<!--The reference for the following images:
+The homepage.png , about.png, , number2 , letters and random.png are purchaesed from istockphot website
+(https://www.istockphoto.com/plans-and-pricing/photos)---->

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Letter lessons
+{% endblock %}
+
+{% block content %}
+<section class="full-container" id="full-container">
+    <div class="row">
+        <div class="content">
+            <h3>Learn the Letter Signs<span> (Left)</span></h3>
+            <p>If You're a Left-handed user learning british sign language(BSL), our letter sign lesson are prefect for your . Our course covers The letter signs for A, B, C,D and P.
+
+          </p>
+        </div>
+    </div>
+</section>
+
+<section class="count-full-container">
+    <div class="box-container">
+        <div class="box" id="Letter-A-Left" style="cursor: pointer" onclick="showImageLeft('letter-A-sign-left')">
+            <i class="fa-sharp fa-solid fa-font"></i>
+            <div class="content">
+                <p>Letter A</p>
+            </div>
+        </div>
+        <div class="box" id="Letter-B-Left" style="cursor: pointer" onclick="showImageLeft('letter-B-sign-left')">
+            <i class="fa-sharp fa-solid fa-b"></i>
+            <div class="content">
+                <p>Letter B</p>
+            </div>
+        </div>
+        <div class="box" id="Letter-C-Left" style="cursor: pointer" onclick="showImageLeft('letter-C-sign-left')">
+            <i class="fa-sharp fa-solid fa-c"></i>
+            <div class="content">
+                <p>Letter B</p>
+            </div>
+        </div>
+        <div class="box" id="Letter-D-Left" style="cursor: pointer" onclick="showImageLeft('letter-D-sign-left')">
+            <i class="fa-sharp fa-solid fa-d"></i>
+            <div class="content">
+                <p>Letter D</p>
+            </div>
+        </div>
+        <div class="box" id="Letter-P-Left" style="cursor: pointer" onclick="showImageLeft('letter-P-sign-left')">
+            <i class="fa-sharp fa-solid fa-p"></i>
+            <div class="content">
+                <p>Letter P</p>
+            </div>
+        </div>
+
+</div>
+</section>
+
+<section class="wrapper">
+  <div class="left" id = "left">
+    <div class = "video-container-left" id="video-container">
+        <img id="video-feed-left" style="display: none;">
+        <img id = "letter-A-sign-left" src="../static/images/Letter_A_Left.png" alt="" style="display: none;">
+        <img id = "letter-B-sign-left" src="../static/images/Letter_B_Left.png" alt="" style="display: none;">
+        <img id = "letter-C-sign-left" src="../static/images/Letter_C_Left.png" alt="" style="display: none;">
+        <img id = "letter-D-sign-left" src="../static/images/Letter_D_Left.png" alt="" style="display: none;">
+        <img id = "letter-P-sign-left" src="../static/images/Letter_P_Left.png" alt="" style="display: none;">
+
+
+    </div>
+  </div>
+  <div class="right">
+    <div class="button-container">
+        <button class ="btn-stop-l" onclick="stopVideo()"><i class="fa-solid fa-circle-stop" id = "stop-sign"></i> Stop Video</button>
+    </div>
+
+    <div class="button-container">
+        <a href="{{ url_for('LeftLetterLesson') }}" class="btn-left">
+            <i class="fa fa-hand-o-left" id = "left-sign" ></i>Left Handed
+        </a>
+
+    </div>
+    <div class="button-container">
+        <a href="{{ url_for('RightLetterLesson') }}" class="btn-right">
+            <i class="fa fa-hand-o-right" id = "right-sign"></i>Right Handed
+        </a>
+    </div>
+  </div>
+</section>
+<section>
+    <h2> Reference for images </h2>
+    <p>https://www.british-sign.co.uk/british-sign-language/dictionary/</p>
+</section>
+{% endblock %}

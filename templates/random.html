@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Right Numbers lessons
+{% endblock %}
+
+{% block content %}
+
+<section class="full-container" id="full-container">
+    <div class="row">
+        <div class="content">
+            <h3>Learn Random Words<span> (Right & Left)</span></h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+    </div>
+</section>
+<section class="count-full-container">
+    <div class="box-container">
+        <div class="box" id="House" style="cursor: pointer" onclick="showImageLeft('House-sign')">
+            <i class="fa-solid fa-house"></i>
+            <div class="content">
+                <p>House</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="wrapper">
+  <div class="left" id = "left">
+    <div class = "video-container-house" id="video-container">
+        <img id="video-feed-left" style="display: none;">
+        <img id = "House-sign" src="../static/images/house-sign.png" alt="" style="display: none;">
+    </div>
+  </div>
+  <div class="right">
+    <div class="button-container">
+        <button class ="btn-stop-l" onclick="stopVideo()"><i class="fa-solid fa-circle-stop" id = "stop-sign"></i> Stop Video</button>
+    </div>
+  </div>
+</section>
+<section>
+    <h2> Reference for images </h2>
+    <p>https://www.british-sign.co.uk/british-sign-language/dictionary/</p>
+</section>
+{% endblock %}

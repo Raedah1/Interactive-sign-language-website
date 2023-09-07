@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Right Numbers lessons
+{% endblock %}
+
+{% block content %}
+
+<section class="full-container" id="full-container">
+    <div class="row">
+        <div class="content">
+            <h3>Learn the Digits Signs<span> (Right & England)</span></h3>
+            <p>Welcome To our british sign language website (Digit lesson). This course is designed specifically for left-handed users who want to learn how to England sign number. In this course you learn How to sign number from 1-9
+          </p>
+        </div>
+    </div>
+</section>
+<section class="count-full-container">
+    <div class="box-container">
+        <div class="box" id="Number-one-right" style="cursor: pointer" onclick="showImageLeft('one-right-sign')">
+            <i class="fa-solid fa-1" ></i>
+            <div class="content">
+                <p>Number one</p>
+            </div>
+        </div>
+        <div class="box" id="Number-two-right" style="cursor: pointer" onclick="showImageLeft('two-right-sign')">
+            <i class="fa-solid fa-2" ></i>
+            <div class="content">
+                <p>Number two</p>
+            </div>
+        </div>
+        <div class="box" id="Number-three-right" style="cursor: pointer" onclick="showImageLeft('three-right-sign')">
+            <i class="fa-solid fa-3" ></i>
+            <div class="content">
+                <p>Number three</p>
+            </div>
+        </div>
+        <div class="box" id="Number-four-right" style="cursor: pointer" onclick="showImageLeft('four-right-sign')">
+            <i class="fa-solid fa-4" ></i>
+            <div class="content">
+                <p>Number four</p>
+            </div>
+        </div>
+        <div class="box" id="Number-five-right" style="cursor: pointer" onclick="showImageLeft('five-right-sign')">
+            <i class="fa-solid fa-5" ></i>
+            <div class="content">
+                <p>Number five</p>
+            </div>
+        </div>
+        <div class="box" id="Number-six-right" style="cursor: pointer" onclick="showImageLeft('six-right-sign')">
+            <i class="fa-solid fa-6" ></i>
+            <div class="content">
+                <p>Number six</p>
+            </div>
+        </div>
+        <div class="box" id="Number-seven-right" style="cursor: pointer" onclick="showImageLeft('seven-right-sign')">
+            <i class="fa-solid fa-7" ></i>
+            <div class="content">
+                <p>Number seven</p>
+            </div>
+        </div>
+        <div class="box" id="Number-eight-right" style="cursor: pointer" onclick="showImageLeft('eight-right-sign')">
+            <i class="fa-solid fa-8" ></i>
+            <div class="content">
+                <p>Number eight</p>
+            </div>
+        </div>
+        <div class="box" id="Number-nine-right" style="cursor: pointer" onclick="showImageLeft('nine-right-sign')">
+            <i class="fa-solid fa-9" ></i>
+            <div class="content">
+                <p>Number nine</p>
+            </div>
+        </div>
+</div>
+</section>
+
+<section class="wrapper">
+  <div class="left" id = "left">
+    <div class = "video-container-right" id="video-container">
+        <img id="video-feed-left" style="display: none;">
+        <img id = "one-right-sign" src="../static/images/Number_one_right.png" alt="" style="display: none;">
+        <img id = "two-right-sign" src="../static/images/Number_two_right.png" alt="" style="display: none;">
+        <img id = "three-right-sign" src="../static/images/Number_three_right.png" alt="" style="display: none;">
+        <img id = "four-right-sign" src="../static/images/Number_four_right.png" alt="" style="display: none;">
+        <img id = "five-right-sign" src="../static/images/Number_five_right.png" alt="" style="display: none;">
+        <img id = "six-right-sign" src="../static/images/Number_six_right.png" alt="" style="display: none;">
+        <img id = "seven-right-sign" src="../static/images/Number_seven_right.png" alt="" style="display: none;">
+        <img id = "eight-right-sign" src="../static/images/Number_eight_right.png" alt="" style="display: none;">
+        <img id = "nine-right-sign" src="../static/images/Number_nine_right.png" alt="" style="display: none;">
+    </div>
+  </div>
+  <div class="right">
+
+    <div class="button-container">
+        <button class ="btn-stop-l" onclick="stopVideo()"><i class="fa-solid fa-circle-stop" id = "stop-sign"></i> Stop Video</button>
+    </div>
+
+    <div class="button-container">
+        <a href="{{ url_for('leftLesson') }}" class="btn-left">
+            <i class="fa fa-hand-o-left" id = "left-sign" ></i>Left Handed
+        </a>
+
+    </div>
+    <div class="button-container">
+        <a href="{{ url_for('rightLesson') }}" class="btn-right">
+            <i class="fa fa-hand-o-right" id = "right-sign"></i>Right Handed
+        </a>
+
+    </div>
+       <div class ="flags">
+           <a href=" {{url_for('rightLesson')}}" class="left-flags">
+               <img id="England-flag" src="../static/images/England-flag.jpg" style="cursor: pointer" onclick="goToPage('rightLesson.html')">
+           </a>
+           <a href=" {{url_for('RightNumberW')}}" class="right-flags">
+               <img id="Wales-flag" src="../static/images/wales.svg" style="cursor: pointer" onclick="goToPage('RightNumberW.html')">
+           </a>
+      </div>
+  </div>
+</section>
+<section>
+    <h2> Reference for images </h2>
+    <p>https://www.british-sign.co.uk/british-sign-language/dictionary/</p>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Lessons  Page
+{% endblock %}
+
+{% block content %}
+<section class="preference-letter" id="preference-letter">
+    <div class="row">
+        <div class="content">
+                <h3>Are you <span>left</span> or <span>right</span>-handed?</h3>
+            <form>
+                <p> Hand preference is important when learning BSL because some signs are performed with one hand while others require the use of both hands. Knowing your hand
+                    preference can help you learn the signs more effectively during the lessons by
+                    allowing you to focus on the hand movements that are most comfortable and natural for you.</p>
+                      <label for="right-handed">Right-handed</label>
+                      <input type="radio" id="right-handed" name="hand-preference" value="right">
+
+                      <br>
+                      <label for="left-handed">Left-handed</label>
+                      <input type="radio" id="left-handed" name="hand-preference" value="left">
+
+                      <br>
+                      <button class= "btn-stop" type="button" onclick="redirectLetter()">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
