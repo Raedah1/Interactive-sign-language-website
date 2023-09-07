@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Home Page
+{% endblock %}
+
+{% block content %}
+<section class = "home" id="home"> 
+
+    <div class="row">
+
+        <div class="content">
+            <h3>online<span> Learning</span></h3>
+            <a href="#contact" class="btn">Join Us</a>
+        </div>
+
+        <div class="image">
+            <img src="../static/images/homepage.png">
+        </div>
+        
+    </div>
+</section>
+
+<section class="line"></section>
+
+<!--about section starts-->
+<section class="about" id="about">
+    <div class="row">
+        <div class="image">
+            <img src="../static/images/about3.png" alt="">
+        </div>
+        <div class="content">
+            <h3>What make us different from other websites?</h3>
+            <p>We Incorporate Hand Gesture Recognition Technology To Make Learning More Interactive And Engaging . Our User-centred design makes our site accessible, Easy to Navigate, and Visually Clear</p>
+            <a href="{{ url_for('about') }}" class="btn">Read More</a>
+        </div>
+    </div>
+</section>
+
+<section class="line"></section>
+
+<!--Courses-->
+<section class="courses" id="courses">
+    <h1 class="heading">our<span> Lessons</span></h1>
+    <div class="container_courses">
+    <article class="course">
+      <div class="course_image">
+        <img src="../static/images/numbers2.png">
+      </div>
+      <div class="course_info">
+        <h4>Learn Numbers in BSL</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+        </p>
+        <div class="button-container">
+             <a href="{{ url_for('LeftOrRightNumber') }}" class="btn-stop">Learn More</a>
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course_image">
+        <img src="../static/images/letters.png">
+      </div>
+      <div class="course_info">
+        <h4>Learn Finger-spelling in BSL</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+        <div class="button-container">
+             <a href="{{ url_for('LeftOrRightLetter') }}" class="btn-stop">Learn More</a>
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course_image">
+        <img src="../static/images/random.png">
+      </div>
+      <div class="course_info">
+        <h4>Learn Basic words in BSL</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+        <div class="button-container">
+             <a href="{{ url_for('random') }}" class="btn-stop">Learn More</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+    </div>
+</section>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
+<!--The reference for the following images:
+The homepage.png , about.png, , number2 , letters and random.png are purchaesed from istockphot website
+(https://www.istockphoto.com/plans-and-pricing/photos)---->
