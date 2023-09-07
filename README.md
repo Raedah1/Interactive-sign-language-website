@@ -36,5 +36,14 @@ All of these factors have an impact on developing an accurate sign recognition f
 The last step, after the sign gesture recognition step, is providing feedback to the user based on their signing performance. For example, if the user did the signing for “Letter A” correctly it will display “Letter A” and “Correct”, which indicates a correct gesture has been performed. In addition, if the user is doing the sign with the wrong hand a “Wrong hand X” feedback will be displayed on the screen. 
 
 Integrating the hand signing recognition model into the web application is what will 
-distinguish it from other BSL teaching websites. Hence, a successful development for 
+distinguish it from other BSL teaching websites. Hence, the successful development for 
 this model is a high priority for the success of the web application.
+
+# 1.4 Hand Signing Recognition Model Implementation 
+
+Two main libraries are used for developing the recognition algorithm, which is "OpenCV" and "Mediapip". OpenCV is used for capturing webcam video and image pre-processing, while the latter is used for tracking, detecting, and drawing the landmarks of the hand. Then the math logic is used on the extracted hand landmarks to customise a recognition function for each sign. 
+
+The Mediapipe framework helps detect 21 landmarks in the hand, as it is shown in Figure 3. The landmarks are going to be used to detect the orientation of the hand, back, and palm of the hand. Additionally, the distance between two fingers of the same hand or for the opposite hand. 
+
+<img width="487" alt="HandLandmarks" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/6af73817-131a-45da-910a-77ea50fdd7f4">
+
