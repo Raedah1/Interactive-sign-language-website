@@ -54,6 +54,8 @@ hand should be detected, based on the user choice. Achieving this task is throug
 landmarks of the left hand are detecting and if it was the right hand landmark , a “continue” statement is executed and it will skips the current detection and will move on the next hand.To see the full code refer to GitHub repository in the Exhibition H of 
 the appendix refer file path “Application /NumberLesson/Number_left.py”. 
 
+<img width="278" alt="Digits" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/381fb617-1d88-4fb3-8550-379d6877ba45">
+
 Once the hand was successfully detected and classified in the video frame. The next step is landmark extraction and storing it in a new variable to be used in signs 
 recognition functions.It is done through the ".landmark” attribute of “hand_landmarks“ object, where it has a list of the (x,y,z) coordinates for each 
 landmark that were detected. As the project will focus on the static signs , only the (x,y) coordinates will be used for further processing and analysing and the (z) will be ignored.The extracted landmark can be used to determine the orientation of the hand, as well as the position of the fingers, whether they are open or closed , and whether the palm of or back of the hand is facing the camera. These critical features will be 
@@ -78,3 +80,22 @@ the work of datamagic2020s GitHub .
 As an example to detect “Number one” for left handed learner’s, first the orientation of the hand is “Up” and the index finger must be open while the rest of the fingers should be closed, please refer to Figure 21.0 for a visual illustration of the sign.To ensure that middle[12], ring[16], and pinky[20] are recognised as closed, the tip of these fingers in the Y-axis should be greater than the [tip - 3]see the snippet of the code in Figure 5.For the index finger if this condition “landmarks [index_tip].< landmarks[index_tip - 2]” is met , it indicates that the finger is extended(open).Then for the thumb finger this condition should be met “landmarks[thumb].x >landmarks[thumb-3].x”, to recognize it as closed.
 
 <img width="235" alt="Up" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/bc3dfe6f-3de8-4459-8ea0-9d1635598c7a">
+
+# 2.4 The Back and the Palm of the hand
+Comparing the thumb tip landmarks [4] with the pinky tip landmark[20] can help determine if the hand facing the webcam is the back or the palm of the hand.For 
+instance, if the orientation of the left hand is “Up” and the landmarks[4] is less than the landmark[20] ,it is recognised as the “Back of the hand”. In contrast, if the landmarks[4] is greater than landmarks[4] ,it is recognised as the “Palm of the hand”,for graphical illustration please refer to Figure 6. 
+
+<img width="477" alt="Screenshot 2023-09-07 161236" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/ebc01bce-81c8-4dc4-9a8a-82abfd3967b0">
+
+# Examples for the Digit Numbers 
+""The Function of Number Six"" 
+The implementation process for the “Number Six” sign will follow the same steps as those outlined previously for “Number one” function. First analyse the feature of the sign, the orientation of the hand must be pointing to the “Right” , as well as all the finger must be closed except the thumb finger.The condition for the fingers to be closed is “landmarks[tip].x < landmarks[tip - 1].x < landmarks[tip - 2].x”. while this condition “landmarks[thumb_tip - 2]. y > landmarks[thumb_tip].y> landmarks[thumb_tip - 1].y” is used to check the position of the thumb in respect to the Y axis , please see Figure 27.0 for visual representation of the sign. 
+
+<img width="188" alt="Number_six" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/ac12ad27-363b-4914-ac4b-0d8c2b1dcc43">
+
+There is no need to add a condition for recognising the back or the palm of the hand in the “recognise_Number_six” function.If the palm of the hand for the 
+“Number six” sign is facing the webcam ,it will not recognise it as “Number six” , because the condition for the closed finger will not be fulfilled. Additionally,
+the orientation of the hand is “Left” , which is the opposite for “Number six” sign.Therefore , there is no need to add another condition to recognise the back 
+of the hand , as it will not make any difference. To get a better illustration refer to Figure 8.
+
+<img width="192" alt="wrong_six_gesture" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/8bc816f8-6c52-4c32-8411-39c4045fe57e">
