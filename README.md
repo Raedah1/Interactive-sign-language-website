@@ -47,3 +47,27 @@ The Mediapipe framework helps detect 21 landmarks in the hand, as it is shown in
 
 <img width="487" alt="HandLandmarks" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/6af73817-131a-45da-910a-77ea50fdd7f4">
 
+
+# 2.1 The Digits signs recognition Function for the Left-handed 
+To accurately recognize the digits signs it is important to consider that they are formed using one hand only as illustrated in Figure 18.0 .Consequently, when initialising the hand tracking module, it is necessary to indicate that only one hand should be tracked. This is achieved by setting the max_num_hands attribute to one “mp_hands.Hands(max_num_hands = 1)”. Moreover, as previously stated the system supports both left-right-handed users. Therefore, it is crucial to specify which 
+hand should be detected, based on the user choice. Achieving this task is through specifying the “hand.classification [0].label != “Left” “ this ensure only the 
+landmarks of the left hand are detecting and if it was the right hand landmark , a “continue” statement is executed and it will skips the current detection and will move on the next hand.To see the full code refer to GitHub repository in the Exhibition H of 
+the appendix refer file path “Application /NumberLesson/Number_left.py”. 
+
+Once the hand was successfully detected and classified in the video frame. The next step is landmark extraction and storing it in a new variable to be used in signs 
+recognition functions.It is done through the ".landmark” attribute of “hand_landmarks“ object, where it has a list of the (x,y,z) coordinates for each 
+landmark that were detected. As the project will focus on the static signs , only the (x,y) coordinates will be used for further processing and analysing and the (z) will be ignored.The extracted landmark can be used to determine the orientation of the hand, as well as the position of the fingers, whether they are open or closed , and whether the palm of or back of the hand is facing the camera. These critical features will be 
+stated into the sign recognition functions.
+
+# 2.2 Orientation of the Hand 
+Detecting the orientation of the hand is an essential step for recognizing the digits signs,as it will make the process of recognising the signs more accurate. The idea of the orientation function “def detect_orientation(hand_landmarks_value)” is based on the work of Mudgal(2021), as described in their tutorial on real-time gesture recognition using Google’s MediaPipe Hands.By taking a list of hand landmarks , for either the right or the left hand and return the orientation based on the position of the wrist[0] and the base of middle finger [9] landmarks. 
+
+The function extracts the x and y coordinate of the wrist[0] and the base of the middle finger landmarks[9].Then it calculates the slope between these two landmarks [0] and [9]. If the result of the calculation is between 0 and 1, and the [9] landmark is greater than [0] landmark , the hand is pointing to the “Right” orientation. In contrast, if the [9] landmark is less than [0] landmark, the hand is pointed to the “Left” .For butter 
+visualisation refer to Figure 4. 
+
+<img width="512" alt="Left_or_right" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/f610530c-c70e-4b23-91fb-cbf26bbc484f">
+
+On other hand, if the calculation results of the slope is greater than 1 and the [9] landmark is less than [0] landmark the hand is pointing to the “Up” direction. While if the [9] is greater than [0] landmark the orientation of the hand is “Down”, for a graphical representation, please see Figure 20.0. To view the full code , please refer to “Application/Number Lesson/Number_Left” or (Section B) in the Appendix If the slope is very close to zero , the function returns “Undefined”.
+
+<img width="492" alt="Up_or_down" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/b961ec5c-465a-4e9d-9858-b7d7f5f02736">
+
