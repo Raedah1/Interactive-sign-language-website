@@ -5,5 +5,6 @@ A web application platform for learning and practicing British sign language thr
 The web application will offer three lessons for learners, namely "Numbers", "Fingerspelling for Alphabet" and "Basic Vocabulary". It will only cover the static signs not the dynamic signs for instance, the letter "J" will not be included in the "Fingerselling for Alphabet" as it is a dynamic sign. Additionally, it supports both right-handed and left-handed learners, as it is important to specify the dominant hand. 
 # 1.2 Use Cases UML Diagram 
 The use cases diagram shows the different actions and use cases the user can do in the system. It helps to visualize the flow of interaction between the user and the system. 
+
 <img width="417" alt="UML" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/738a8dac-220f-4c6d-9026-0f38c863d6e1">
 
