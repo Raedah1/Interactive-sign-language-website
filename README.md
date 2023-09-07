@@ -120,3 +120,7 @@ In the implementation of the “reconise_letter_A '' function , the calculated d
 hand sign as “Letter A”,please refer to Figure 12.
 
 <img width="168" alt="Letter_A" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/bf65d3bf-2e52-41e8-a957-ddb491b59624">
+
+# Video Demo For the web application 
+YouTube Video (Interactive sign language learning real-time hand sign recognition):
+https://youtu.be/0yd9BMwc_BU
