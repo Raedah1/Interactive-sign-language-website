@@ -23,13 +23,13 @@ For hand detection, “Mediapipe” library framework is used to track and detec
 The sign recognition functions is based on utilising the mathematical logic with the 
 extracted landmarks to recognize the different signs, there are several factors that 
 have been considered when designing the recognition functions, which are as follows: 
-● Number of hands in the frame.
-● Handness(Left or Right). 
-● Orientation of the hand. 
-● Orientation of specific fingers in the hand. 
-● The palm or the back of the hand. 
-● Fingers are closed or open. 
-● Distance between fingers of the same or opposite hand. 
+- Number of hands in the frame.
+- Handness(Left or Right). 
+- Orientation of the hand. 
+- Orientation of specific fingers in the hand. 
+- The palm or the back of the hand. 
+- Fingers are closed or open. 
+- Distance between fingers of the same or opposite hand. 
 
 All of these factors have an impact on developing an accurate sign recognition function, they will be defined as a condition, and if the recognised sign met the condition a feedback will be displayed. It is worth noting not all the factors will be utilized in every recognition function. Therefore, some signs might only need two to three conditions for them to be recognized. 
 
