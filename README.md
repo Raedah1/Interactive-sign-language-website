@@ -11,7 +11,7 @@ The use cases diagram shows the different actions and use cases the user can do 
 # 1.3 Hand Signing Recognition Model Design 
 The design of the hand sign recognition models consists of  a set of interconnected steps and functions that work together to achieve a specific task, which is to accurately recognize the signs and return correct and reliable feedback to the users. For a graphical illustration, please refer to Figure 2.
 
-<img width="382" alt="Model" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/cb846ef7-f55e-487d-bef3-8d13784baed9">
+<img width="382" alt="Model" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/177496d7-f9fe-40a4-8b9b-0ad1f9fa41d1">
 
 
 The model begins when the user performs a sign, and the camera captures the video feed with the help of the “OpenCV'' library. Then it pre-processes the image frame to ensure that data inputs are in their correct format, by converting the frame from the default BGR to RGB. This is an important step as it is the required format for the “Mediapipe” framework that is used for hand tracking and detection.
@@ -45,7 +45,7 @@ Two main libraries are used for developing the recognition algorithm, which is "
 
 The Mediapipe framework helps detect 21 landmarks in the hand, as it is shown in Figure 3. The landmarks are going to be used to detect the orientation of the hand, back, and palm of the hand. Additionally, the distance between two fingers of the same hand or for the opposite hand. 
 
-<img width="487" alt="HandLandmarks" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/6af73817-131a-45da-910a-77ea50fdd7f4">
+<img width="487" alt="HandLandmarks" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/43a2aebc-2490-4aae-9529-ab8056468ae9">
 
 
 # 2.1 The Digits signs recognition Function for the Left-handed 
@@ -54,7 +54,7 @@ hand should be detected, based on the user choice. Achieving this task is throug
 landmarks of the left hand are detecting and if it was the right hand landmark , a “continue” statement is executed and it will skips the current detection and will move on the next hand.To see the full code refer to GitHub repository in the Exhibition H of 
 the appendix refer file path “Application /NumberLesson/Number_left.py”. 
 
-<img width="278" alt="Digits" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/381fb617-1d88-4fb3-8550-379d6877ba45">
+<img width="278" alt="Digits" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/d4619687-1d65-45d6-8976-12128e129587">
 
 Once the hand was successfully detected and classified in the video frame. The next step is landmark extraction and storing it in a new variable to be used in signs 
 recognition functions.It is done through the ".landmark” attribute of “hand_landmarks“ object, where it has a list of the (x,y,z) coordinates for each 
@@ -67,7 +67,7 @@ Detecting the orientation of the hand is an essential step for recognizing the d
 The function extracts the x and y coordinate of the wrist[0] and the base of the middle finger landmarks[9].Then it calculates the slope between these two landmarks [0] and [9]. If the result of the calculation is between 0 and 1, and the [9] landmark is greater than [0] landmark , the hand is pointing to the “Right” orientation. In contrast, if the [9] landmark is less than [0] landmark, the hand is pointed to the “Left” .For butter 
 visualisation refer to Figure 4. 
 
-<img width="512" alt="Left_or_right" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/f610530c-c70e-4b23-91fb-cbf26bbc484f">
+<img width="512" alt="Left_or_right" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/68ba755c-af82-49ca-a0d9-56530c653475">
 
 On other hand, if the calculation results of the slope is greater than 1 and the [9] landmark is less than [0] landmark the hand is pointing to the “Up” direction. While if the [9] is greater than [0] landmark the orientation of the hand is “Down”, for a graphical representation, please see Figure 20.0. To view the full code , please refer to “Application/Number Lesson/Number_Left” or (Section B) in the Appendix If the slope is very close to zero , the function returns “Undefined”.
 
@@ -79,37 +79,37 @@ of the tip in the same finger ”landmark[tip -1]” and “landmarks[tip - 2]�
 the work of datamagic2020s GitHub . 
 As an example to detect “Number one” for left handed learner’s, first the orientation of the hand is “Up” and the index finger must be open while the rest of the fingers should be closed, please refer to Figure 21.0 for a visual illustration of the sign.To ensure that middle[12], ring[16], and pinky[20] are recognised as closed, the tip of these fingers in the Y-axis should be greater than the [tip - 3]see the snippet of the code in Figure 5.For the index finger if this condition “landmarks [index_tip].< landmarks[index_tip - 2]” is met , it indicates that the finger is extended(open).Then for the thumb finger this condition should be met “landmarks[thumb].x >landmarks[thumb-3].x”, to recognize it as closed.
 
-<img width="235" alt="Up" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/bc3dfe6f-3de8-4459-8ea0-9d1635598c7a">
+<img width="492" alt="Up_or_down" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/c07f1dbe-10f6-4066-a431-7e692c604bdc">
 
 # 2.4 The Back and the Palm of the hand
 Comparing the thumb tip landmarks [4] with the pinky tip landmark[20] can help determine if the hand facing the webcam is the back or the palm of the hand.For 
 instance, if the orientation of the left hand is “Up” and the landmarks[4] is less than the landmark[20] ,it is recognised as the “Back of the hand”. In contrast, if the landmarks[4] is greater than landmarks[4] ,it is recognised as the “Palm of the hand”,for graphical illustration please refer to Figure 6. 
 
-<img width="477" alt="Screenshot 2023-09-07 161236" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/ebc01bce-81c8-4dc4-9a8a-82abfd3967b0">
+<img width="477" alt="Screenshot 2023-09-07 161236" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/da3f445d-a555-4c9b-b614-af5f2aecd247">
 
 # Examples for the Digit Numbers 
 ""The Function of Number Six"" 
 The implementation process for the “Number Six” sign will follow the same steps as those outlined previously for “Number one” function. First analyse the feature of the sign, the orientation of the hand must be pointing to the “Right” , as well as all the finger must be closed except the thumb finger.The condition for the fingers to be closed is “landmarks[tip].x < landmarks[tip - 1].x < landmarks[tip - 2].x”. while this condition “landmarks[thumb_tip - 2]. y > landmarks[thumb_tip].y> landmarks[thumb_tip - 1].y” is used to check the position of the thumb in respect to the Y axis , please see Figure 27.0 for visual representation of the sign. 
 
-<img width="188" alt="Number_six" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/ac12ad27-363b-4914-ac4b-0d8c2b1dcc43">
+<img width="188" alt="Number_six" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/5b493d6a-87cc-414f-8db8-f1fe805d6618">
 
 There is no need to add a condition for recognising the back or the palm of the hand in the “recognise_Number_six” function.If the palm of the hand for the 
 “Number six” sign is facing the webcam ,it will not recognise it as “Number six” , because the condition for the closed finger will not be fulfilled. Additionally,
 the orientation of the hand is “Left” , which is the opposite for “Number six” sign.Therefore , there is no need to add another condition to recognise the back 
 of the hand , as it will not make any difference. To get a better illustration refer to Figure 8.
 
-<img width="192" alt="wrong_six_gesture" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/8bc816f8-6c52-4c32-8411-39c4045fe57e">
+<img width="192" alt="wrong_six_gesture" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/14d2e185-9bd2-4724-ab0c-18294934f209">
 
 # 3.0 The Letters sign recognition function for Left-handed
 Therefore the two key features that will be focused on when implementing the functions are the distance between the fingers , and determining if the fingers are open or closed. First initialising the hand tracking module to detect both hands by setting the attribute to 2 “mp_hands.Hands(max_num_hands = 2)”. Then identify and store the detected landmarks of the right and left hand in separate variables. As they will be used in stating the conditions for recognising the signs. Furthermore, calculating the distance between the landmarks of the opposite hand.
 
-<img width="367" alt="Letters" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/e6dce9a8-af3a-4bdc-bd81-6334490963e3">
+<img width="367" alt="Letters" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/db35be1e-2187-43d7-b3b1-9abc3723c08a">
 
 # 3.1 The Distance between Fingers 
 The concept behind this function is to calculate the Euclidean distance between two landmarks and then use it as a condition to recognize specific hand signs . The formula is as follows “sqrt((x2 - x1) ^2+ (y2 - y1) ^2)”. The function takes two landmarks points 
 as input and returns the distance between them. Snippet of the code is in Figure 10.
 
-<img width="227" alt="Block_of_code" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/1cc33a68-ad12-4663-9b97-4d47ff97d22b">
+<img width="227" alt="Block_of_code" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/81a09c2a-b3fc-4703-bd8a-99303bb40a0d">
 
 To give an example of how the distance feature is used to recognise a sign ,consider the “Letter A” sign for left-handed learner.In this sign, the tip of the index finger of the left hand is placed on the tip of the thumb finger of the right hand. This indicates that the distance between them should be relatively small, close to “0.01”, compared with other fingers. To get an accurate distance measurement , refer to the “findDistance'' file, which presents two functions , the “find_distance” ,and “show_distance”, to calculate the distance and display it in the frame respectively (reference, the two files). 
 For illustration refer to Figure 11.
