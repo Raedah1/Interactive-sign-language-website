@@ -114,10 +114,9 @@ as input and returns the distance between them. Snippet of the code is in Figure
 To give an example of how the distance feature is used to recognise a sign ,consider the “Letter A” sign for left-handed learner.In this sign, the tip of the index finger of the left hand is placed on the tip of the thumb finger of the right hand. This indicates that the distance between them should be relatively small, close to “0.01”, compared with other fingers. To get an accurate distance measurement , refer to the “findDistance'' file, which presents two functions , the “find_distance” ,and “show_distance”, to calculate the distance and display it in the frame respectively (reference, the two files). 
 For illustration refer to Figure 11.
 
-<img width="169" alt="Distance" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/c6f1aa34-e034-4f62-a38e-2425a1622216">
+<img width="169" alt="Distance" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/cda2ab88-ee25-40f1-b231-f81b2d13729f">
 
 In the implementation of the “reconise_letter_A '' function , the calculated distance is used as a condition to reconsine the sign.However,it is recommended to set the distance slightly larger as “if distance <= 0.03”, to allow for some flexibility. Since the signs can still be recognised as “Letter A” as long as the index finger of the left hand is attached to the thumb finger of the right hand. There are others features that need to be stated such as the rest of the right hand fingers must be closed. while all the fingers of the left hand must be closed. If all the conditions are met it recognises the 
 hand sign as “Letter A”,please refer to Figure 12.
 
-<img width="168" alt="Letter_A" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/bf65d3bf-2e52-41e8-a957-ddb491b59624">
-
+<img width="168" alt="Letter_A" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/409d335c-0542-4fe1-87bf-838e4d7920c1">
