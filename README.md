@@ -6,7 +6,7 @@ The web application will offer three lessons for learners, namely "Numbers", "Fi
 # 1.2 Use Cases UML Diagram 
 The use cases diagram shows the different actions and use cases the user can do in the system. It helps to visualize the flow of interaction between the user and the system. Please refer to Figure 1.
 
-<img width="417" alt="UML" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/738a8dac-220f-4c6d-9026-0f38c863d6e1">
+<img width="417" alt="UML" src="https://github.com/Raedah1/Interactive-sign-language-website/assets/92187909/0049dd94-557c-453d-9c59-4a2f62e4a777">
 
 # 1.3 Hand Signing Recognition Model Design 
 The design of the hand sign recognition models consists of  a set of interconnected steps and functions that work together to achieve a specific task, which is to accurately recognize the signs and return correct and reliable feedback to the users. For a graphical illustration, please refer to Figure 2.
